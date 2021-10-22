@@ -1,18 +1,46 @@
+import { useAuth } from "./context/AuthContext";
 import "./styles/output.css";
+import {
+  BrowserRouter as Router,
+  Redirect,
+  Route,
+  Switch,
+} from "react-router-dom";
+import LogIn from "./components/LogIn";
+import SignUp from "./components/SignUp";
+import SignOut from "./components/SignOut";
+import Boards from "./components/Boards";
+import { PrivateRoute } from "./helper/PrivateRoute";
 
 function App() {
+  const { currentUser } = useAuth();
   return (
-    <div className="bg-gray-900 p-20 h-screen flex justify-center items-start flex-col">
-      <h1 className="text-5xl text-white">Hello Tailwind 👋</h1>
-      <p className="text-gray-400 mt-5 text-lg">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit
-        consequuntur odio aut nobis ab quis? Reiciendis doloremque ut quo fugiat
-        eveniet tempora, atque alias earum ullam inventore itaque sapiente iste?
-      </p>
-      <button class="p-4 bg-green-600 rounded-lg font-bold text-white mt-5 hover:bg-gray-600">
-        Hello Friends 🚀
-      </button>
-    </div>
+    <Router>
+      <Switch>
+        {/* dynamic routes */}
+        {/* {boards
+          ? boards.map((board) => (
+              <PrivateRoute exact path={"/" + board} component={Board} />
+            ))
+          : null} */}
+
+        <Route exact path="/login" component={LogIn} />
+        <Route exact path="/signup" component={SignUp} />
+        <Route exact path="/signout" component={SignOut} />
+
+        <PrivateRoute exact path="/boards" component={Boards} />
+        <Route
+          path="/"
+          render={() =>
+            currentUser === null ? (
+              <Redirect to="/login" />
+            ) : (
+              <Redirect to="/boards" />
+            )
+          }
+        />
+      </Switch>
+    </Router>
   );
 }
 
