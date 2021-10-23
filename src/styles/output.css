@@ -29838,6 +29838,16 @@ video {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.scroll-div {
+  overflow-y: auto;
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+
+.scroll-div::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;
@@ -59069,6 +59079,16 @@ video {
 
   .sm\:ease-in-out {
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .sm\:scroll-div {
+    overflow-y: auto;
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .sm\:scroll-div::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
   }
 }
 
@@ -88304,6 +88324,16 @@ video {
   .md\:ease-in-out {
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
+
+  .md\:scroll-div {
+    overflow-y: auto;
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .md\:scroll-div::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
+  }
 }
 
 @media (min-width: 1024px) {
@@ -117537,6 +117567,16 @@ video {
 
   .lg\:ease-in-out {
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .lg\:scroll-div {
+    overflow-y: auto;
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .lg\:scroll-div::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
   }
 }
 
@@ -146772,6 +146812,16 @@ video {
   .xl\:ease-in-out {
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
+
+  .xl\:scroll-div {
+    overflow-y: auto;
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .xl\:scroll-div::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
+  }
 }
 
 @media (min-width: 1536px) {
@@ -176005,5 +176055,15 @@ video {
 
   .\32xl\:ease-in-out {
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .\32xl\:scroll-div {
+    overflow-y: auto;
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .\32xl\:scroll-div::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
   }
 }
