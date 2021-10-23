@@ -11,6 +11,7 @@ import SignUp from "./components/SignUp";
 import SignOut from "./components/SignOut";
 import Boards from "./components/Boards";
 import { PrivateRoute } from "./helper/PrivateRoute";
+import Board from "./components/BoardComponents/Board";
 
 function App() {
   const { currentUser } = useAuth();
@@ -29,6 +30,7 @@ function App() {
         <Route exact path="/signout" component={SignOut} />
 
         <PrivateRoute exact path="/boards" component={Boards} />
+        <PrivateRoute exact path="/board" component={Board} />
         <Route
           path="/"
           render={() =>
